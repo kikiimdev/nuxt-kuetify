@@ -60,7 +60,10 @@
       "ufo",
       "unconfig",
       "vite",
-      "vuetify"
+      "vuetify",
+      "vuetify-nuxt-module",
+      "date-fns",
+      "@date-io/date-fns"
     ]
   }
 }
