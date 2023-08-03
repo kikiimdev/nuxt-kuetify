@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.6
+
+[compare changes](https://undefined/undefined/compare/v0.0.5...v0.0.6)
+
+### 💅 Refactors
+
+- Use vuetify-nuxt-module module (ad52a91)
+
+### ❤️  Contributors
+
+- Kiki Irwan Maulana
+
 ## v0.0.5
 
 [compare changes](https://undefined/undefined/compare/v0.0.4...v0.0.5)
