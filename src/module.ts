@@ -3,6 +3,7 @@ import {
   addPlugin,
   createResolver,
   addComponentsDir,
+  addImportsDir,
 } from "@nuxt/kit";
 
 // Module options TypeScript interface definition
@@ -30,9 +31,7 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.options.css.push("vuetify/styles/main.sass");
     nuxt.options.css.push("vuetify/styles/main.sass");
     nuxt.options.css.push(resolve("./runtime/assets/css/skeleton.css"));
-    addComponentsDir({
-      path: "vuetify/composables",
-    });
+    addImportsDir("vuetify/composables");
 
     if (options.useMdiIcon) {
       nuxt.options.css.push("@mdi/font/css/materialdesignicons.min.css");
