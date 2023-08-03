@@ -1,9 +1,8 @@
 import {
   defineNuxtModule,
-  addPlugin,
   createResolver,
   addComponentsDir,
-  addImportsDir,
+  installModule,
 } from "@nuxt/kit";
 
 // Module options TypeScript interface definition
@@ -22,26 +21,45 @@ export default defineNuxtModule<ModuleOptions>({
     useMdiIcon: false,
     useCustomComponents: false,
   },
-  setup(options, nuxt) {
+  async setup(options, nuxt) {
     const { resolve } = createResolver(import.meta.url);
 
-    // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
-    addPlugin(resolve("./runtime/plugin"));
-    nuxt.options.build.transpile.push("vuetify");
-    nuxt.options.css.push("vuetify/styles/main.sass");
-    nuxt.options.css.push("vuetify/styles/main.sass");
-    nuxt.options.css.push(resolve("./runtime/assets/css/skeleton.css"));
-    addImportsDir("vuetify/composables");
-    addImportsDir("vuetify");
+    // // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
+    // addPlugin(resolve("./runtime/plugin"));
+    // nuxt.options.build.transpile.push("vuetify");
+    // nuxt.options.css.push("vuetify/styles/main.sass");
+    // nuxt.options.css.push(resolve("./runtime/assets/css/skeleton.css"));
+    // addImportsDir("vuetify/composables");
+    // addImportsDir("vuetify/lib");
 
-    if (options.useMdiIcon) {
-      nuxt.options.css.push("@mdi/font/css/materialdesignicons.min.css");
-    }
+    // if (options.useMdiIcon) {
+    //   nuxt.options.css.push("@mdi/font/css/materialdesignicons.min.css");
+    // }
+
+    nuxt.options.css.push(resolve("./runtime/assets/css/skeleton.css"));
 
     if (options.useCustomComponents) {
       addComponentsDir({
         path: resolve("./runtime/components"),
       });
     }
+
+    await installModule("vuetify-nuxt-module", {
+      moduleOptions: {
+        /* module specific options */
+      },
+      vuetifyOptions: {
+        // components: true,
+        labComponents: true,
+        directives: true,
+        icons: {
+          defaultSet: "mdi",
+          sets: ["mdi"],
+        },
+        date: {
+          adapter: "date-fns", // 'vuetify' | 'date-fns' | 'moment' | 'luxon' | 'dayjs' | 'js-joda' | 'date-fns-jalali' | 'jalaali' | 'hijri' | 'custom'
+        },
+      },
+    });
   },
 });
