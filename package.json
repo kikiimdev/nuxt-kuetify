@@ -1,6 +1,6 @@
 {
   "name": "@kiki.im.dev/nuxt-kuetify",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "My personal custom components using Vuetify",
   "repository": "@kiki.im.dev/nuxt-kuetify",
   "license": "MIT",
