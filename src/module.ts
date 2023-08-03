@@ -28,7 +28,11 @@ export default defineNuxtModule<ModuleOptions>({
     addPlugin(resolve("./runtime/plugin"));
     nuxt.options.build.transpile.push("vuetify");
     nuxt.options.css.push("vuetify/styles/main.sass");
+    nuxt.options.css.push("vuetify/styles/main.sass");
     nuxt.options.css.push(resolve("./runtime/assets/css/skeleton.css"));
+    addComponentsDir({
+      path: "vuetify/composables",
+    });
 
     if (options.useMdiIcon) {
       nuxt.options.css.push("@mdi/font/css/materialdesignicons.min.css");
