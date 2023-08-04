@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.8
+
+[compare changes](https://undefined/undefined/compare/v0.0.7...v0.0.8)
+
+### 🚀 Enhancements
+
+- Add main theme (d32000e)
+
+### ❤️  Contributors
+
+- Kiki Irwan Maulana
+
 ## v0.0.7
 
 [compare changes](https://undefined/undefined/compare/v0.0.6...v0.0.7)
