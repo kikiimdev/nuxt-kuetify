@@ -5,6 +5,8 @@ import {
   installModule,
 } from "@nuxt/kit";
 
+import idID from "date-fns/locale/id";
+
 // Module options TypeScript interface definition
 export interface ModuleOptions {
   useMdiIcon: boolean;
@@ -44,11 +46,55 @@ export default defineNuxtModule<ModuleOptions>({
       });
     }
 
+    const mainTheme = {
+      dark: false,
+      colors: {
+        primary: "#6750A4",
+        "on-primary": "#FFFFFF",
+        "primary-container": "#EADDFF",
+        "on-primary-container": "#21005D",
+
+        secondary: "#625B71",
+        "on-secondary": "#FFFFFF",
+        "secondary-container": "#E8DEF8",
+        "on-secondary-container": "#1D192B",
+
+        tertiary: "#7D5260",
+        "on-tertiary": "#FFFFFF",
+        "tertiary-container": "#FFD8E4",
+        "on-tertiary-container": "#31111D",
+
+        error: "#B3251E",
+        "on-error": "#FFFFFF",
+        "error-container": "#FADEDC",
+        "on-error-container": "#410E0B",
+
+        "surface-dim": "#DED8E0",
+        surface: "#FDF7FF",
+        "surface-bright": "#FDF7FF",
+        "surface-container-lowest": "#FFFFFF",
+        "surface-container-low": "#F8F2FA",
+        "surface-container": "#F2ECF4",
+        "surface-container-high": "#ECE6EE",
+        "surface-container-highest": "#E6E0E9",
+        "on-surface": "#1C1B1F",
+        "on-surface-variant": "#49454F",
+        outline: "#79747E",
+        "outline-variant": "#CBC4CF",
+      },
+    };
+
     await installModule("vuetify-nuxt-module", {
       moduleOptions: {
         /* module specific options */
       },
       vuetifyOptions: {
+        theme: {
+          defaultTheme: "main",
+          themes: {
+            main: mainTheme,
+          },
+        },
         // components: true,
         labComponents: true,
         directives: true,
@@ -58,6 +104,31 @@ export default defineNuxtModule<ModuleOptions>({
         },
         date: {
           adapter: "date-fns", // 'vuetify' | 'date-fns' | 'moment' | 'luxon' | 'dayjs' | 'js-joda' | 'date-fns-jalali' | 'jalaali' | 'hijri' | 'custom'
+          locale: {
+            id: idID,
+          },
+        },
+        defaults: {
+          VBtn: {
+            class: "text-none",
+            variant: "flat",
+          },
+          VTextField: {
+            hideDetails: "auto",
+            label: "",
+            variant: "outlined",
+            density: "compact",
+          },
+          VTextarea: {
+            hideDetails: "auto",
+            label: "",
+            variant: "outlined",
+            density: "compact",
+          },
+          VCard: {
+            elevation: "0",
+            rounded: "lg",
+          },
         },
       },
     });
