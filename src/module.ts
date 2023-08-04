@@ -5,8 +5,6 @@ import {
   installModule,
 } from "@nuxt/kit";
 
-import idID from "date-fns/locale/id";
-
 // Module options TypeScript interface definition
 export interface ModuleOptions {
   useMdiIcon: boolean;
@@ -104,9 +102,6 @@ export default defineNuxtModule<ModuleOptions>({
         },
         date: {
           adapter: "date-fns", // 'vuetify' | 'date-fns' | 'moment' | 'luxon' | 'dayjs' | 'js-joda' | 'date-fns-jalali' | 'jalaali' | 'hijri' | 'custom'
-          locale: {
-            id: idID,
-          },
         },
         defaults: {
           VBtn: {
