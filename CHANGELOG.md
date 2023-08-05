@@ -1,6 +1,27 @@
 # Changelog
 
 
+## v0.0.9
+
+[compare changes](https://undefined/undefined/compare/v0.0.8...v0.0.9)
+
+### 🚀 Enhancements
+
+- KContainerFixed component (ba03483)
+- KBtn component (915640a)
+
+### 🩹 Fixes
+
+- Remove date locale (062a5ac)
+
+### 🎨 Styles
+
+- Change some colo (8094f1d)
+
+### ❤️  Contributors
+
+- Kiki Irwan Maulana
+
 ## v0.0.8
 
 [compare changes](https://undefined/undefined/compare/v0.0.7...v0.0.8)
