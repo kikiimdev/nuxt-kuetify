@@ -14,15 +14,15 @@
 </template>
 
 <script setup lang="ts">
-import type { VBtn, VTooltip } from "vuetify/components";
+import { VBtn, VTooltip } from "vuetify/components";
+// type VBtnProps = VBtn["$props"];
+// type VTooltipProps = VTooltip["$props"];
 
-defineProps<
-  VBtn["$props"] & {
-    hello?: string;
-    tooltipText?: string;
-    tooltipProps?: VTooltip["$props"];
-  }
->();
+defineProps<{
+  hello?: string;
+  tooltipText?: string;
+  tooltipProps?: Record<string, any>;
+}>();
 </script>
 
 <style></style>
