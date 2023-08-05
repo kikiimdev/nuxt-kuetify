@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.10
+
+[compare changes](https://undefined/undefined/compare/v0.0.9...v0.0.10)
+
+### 🩹 Fixes
+
+- KBtn type props (ce42ff6)
+
+### ❤️  Contributors
+
+- Kiki Irwan Maulana
+
 ## v0.0.9
 
 [compare changes](https://undefined/undefined/compare/v0.0.8...v0.0.9)
